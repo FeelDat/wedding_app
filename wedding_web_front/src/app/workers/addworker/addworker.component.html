@@ -1,0 +1,20 @@
+
+<div style="margin-top: 20px;">
+  <form (ngSubmit)='onAddWorker(workerForm)' (reset)='resetForm()'  #workerForm='ngForm'>
+    <input type="hidden" name="_id" [(ngModel)]="workerService.selectedWorker._id">
+    <div class="form-group" style="width: 200px;">
+      <input class="form-control " type='text' placeholder="Aty" name="name"
+        [(ngModel)]="workerService.selectedWorker.name" required>
+    </div>
+    <div class="form-group" style="width: 200px;">
+      <input class="form-control " type="text" placeholder="Number" name="number"  [(ngModel)]="workerService.selectedWorker.number" required />
+    </div>
+  
+    <div class="subres">
+      <button class="btn btn-success" style="margin-right: 20px;" type="submit" [disabled]='!workerForm.valid'>
+        Saqtaý </button>
+      <button type="button" class="btn btn-primary" style="margin-right: 20px;" type="reset">Tazartý</button>
+      <button type="button" class="btn btn-danger" (click)="onDelete(workerService.selectedWorker)">Joıý</button>
+    </div>
+  </form>
+</div>

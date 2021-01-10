@@ -1,0 +1,145 @@
+* {
+    font-family: "Times New Roman", Georgia, Serif;
+    font-stretch: condensed;
+    box-sizing: border-box;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.header{
+    height: calc(100vh - 40px);
+    background: #f2f2f2;
+    position: relative;
+    text-align: center;
+    background: black;
+    background-size: cover;
+    filter: grayscale(100%);
+}
+
+h1{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.choose_section{
+  width: 100%;
+  height: calc(90vh - 40px);
+  overflow: hidden;
+}
+
+.section1{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: #777;
+    position: relative;
+    transform: skew(-7deg);
+    z-index: 1;
+    transition: width 0.5s;
+    cursor: pointer;
+}
+
+.section1:before{
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #777;
+  top: 0;
+  left: 0;
+  transform: skew(7deg);
+  z-index: -1;
+}
+
+.section2{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: #666;
+    position: relative;
+    transform: skew(-7deg);
+    z-index: 1;
+    transition: width 0.5s;
+    cursor: pointer;
+}
+
+.section2:after{
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #666;
+  top: 0;
+  right: 0;
+  transform: skew(7deg);
+  z-index: -1;
+}
+
+.horizontal{
+  border-style: solid;
+  border-left-width: 15px;
+  animation-duration: 1.5s;
+  animation-name: slide;
+  animation-iteration-count: 1;
+  width: 1px;
+}
+
+@keyframes slide {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+.content{
+  transform: skew(9deg);
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.one-is-active .section1{
+        width: 65%;
+}
+.one-is-active .section2{
+        width: 35%;
+}
+
+.two-is-active .section1{
+        width: 35%;
+}
+
+.two-is-active .section2{
+        width: 65%;
+}
+
+
+.scroll{
+    position: absolute;
+    bottom: 20px;
+    margin: 0 auto;
+    display: inline-block;
+    left: auto;
+    right: auto;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}

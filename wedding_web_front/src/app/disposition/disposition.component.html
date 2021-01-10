@@ -1,0 +1,137 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+<div cdkDropListGroup>
+  <div class="container" style="width: 100%;max-width: 100%;">
+    <div class="row">
+      <div class="col-4">
+        <label style="font-size: large;"> Список гостей</label> <br>
+        <div class="example-container">
+          <div cdkDropList [cdkDropListData]="tables[0]" class="example-list" (cdkDropListDropped)="drop($event, '0')">
+            <table class="example-box "*ngFor="let item of tables[0];let i = index;" cdkDrag>
+              <tbody>
+                  <tr (click)="onEdit(item)">
+                    <td>{{i+1}}.</td>
+                    <td>{{item.name}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+<div>
+  <label for="tableList">Количество столов</label>
+  <input type="number" [(ngModel)]="tCount" >
+  <button  class="btn btn-success" (click)="getGuestsList()">Применить</button>
+</div>
+        <ng-container *ngFor="let table of tables;let i = index">
+          <div class="example-container" *ngIf="i!=0">
+            <div style="border-color: white;" (click)="hidden[i]=hidden[i]?false:true;"cdkDropList [cdkDropListData]="table" class="example-list"
+              (cdkDropListDropped)="drop($event, i)">
+              <svg width="300" height="240" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>background</title>
+                  <rect fill="#fff" id="canvas_background" height="242" width="302" y="-1" x="-1" />
+                  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+                    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" />
+                  </g>
+                </g>
+                <g>
+                  <title>Layer 1</title>
+                  <line stroke="#000" transform="rotate(61.970611572265625 128.2907409667969,178.56817626953122) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_17" y2="187.35616" x2="131.85737"
+                    y1="169.78019" x1="124.72409" fill-opacity="null" stroke-opacity="null" stroke-width="2"
+                    fill="none" />
+                  <line stroke="#000" transform="rotate(172.4948272705078 90.52435302734375,163.28128051757815) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_18" y2="176.10717" x2="89.6377" y1="150.45538"
+                    x1="91.41101" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <rect stroke="#000" transform="rotate(23.402341842651367 105.50000000000023,180.55000305175778) "
+                    rx="25" id="svg_19" height="13" width="52" y="174.05" x="79.5" stroke-opacity="null"
+                    stroke-width="1.5" fill="#999999" />
+                  <line stroke="#000" transform="rotate(45.698150634765625 212.36694335937497,53.246215820312486) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_23" y2="60.65679" x2="219.10876" y1="45.83565"
+                    x1="205.6251" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <line stroke="#000" transform="rotate(-150.13563537597656 172.4055480957031,44.060424804687514) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_24" y2="53.15507" x2="172.13027" y1="34.96578"
+                    x1="172.68081" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <rect stroke="#000" transform="rotate(13.168197631835938 197.5,36.549999237060504) " rx="25"
+                    id="svg_25" height="13" width="52" y="30.05" x="171.5" stroke-opacity="null" stroke-width="1.5"
+                    fill="#999999" />
+                  <line stroke="#000" transform="rotate(1.6723977327346802 112.49999999999935,39.55000305175767) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_26" y2="51.64789" x2="137.03256" y1="37.48846"
+                    x1="123.54891" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <line stroke="#000" transform="rotate(1.6723977327346802 93.34162902832045,55.416656494140916) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_27" y2="64.51131" x2="93.21225" y1="46.32202"
+                    x1="93.47101" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <rect stroke="#000" transform="rotate(-16.76519775390625 106.49999999999997,37.549999237060554) "
+                    rx="25" id="svg_28" height="13" width="52" y="31.05" x="80.5" stroke-opacity="null"
+                    stroke-width="1.5" fill="#999999" />
+                  <line stroke="#000" transform="rotate(13.314967155456543 241.51953125000009,81.7139892578125) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_29" y2="82.86579" x2="256.58479" y1="80.56219"
+                    x1="226.45432" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <line stroke="#000" transform="rotate(-150.13563537597656 244.16183471679688,126.8108673095703) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_30" y2="137.91412" x2="238.39236"
+                    y1="115.70762" x1="249.93131" fill-opacity="null" stroke-opacity="null" stroke-width="2"
+                    fill="none" />
+                  <rect stroke="#000" transform="rotate(88.19986724853516 259.56280517578125,104.54804229736331) "
+                    rx="25" id="svg_31" height="12.87435" width="52" y="98.11087" x="233.5628" stroke-opacity="null"
+                    stroke-width="1.5" fill="#999999" />
+                  <line stroke="#000" transform="rotate(13.314967155456543 61.89083862304686,128.1451873779297) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_32" y2="129.4008" x2="74.03672" y1="126.88959"
+                    x1="49.74496" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <line stroke="#000" transform="rotate(-117.19386291503906 64.42691040039062,86.25289916992188) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_33" y2="95.61103" x2="63.60095" y1="76.89476"
+                    x1="65.25287" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <rect stroke="#000" transform="rotate(-89.29886627197266 52.49999618530274,109.55000305175783) "
+                    rx="25" id="svg_34" height="13" width="52" y="103.05" x="26.5" stroke-opacity="null"
+                    stroke-width="1.5" fill="#999999" />
+                  <line stroke="#000" transform="rotate(13.314967155456543 206.29074096679665,169.56817626953125) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_35" y2="179.97595" x2="207.65446"
+                    y1="159.16039" x1="204.92702" fill-opacity="null" stroke-opacity="null" stroke-width="2"
+                    fill="none" />
+                  <line stroke="#000" transform="rotate(-129.29891967773438 166.37149047851562,179.66986083984375) "
+                    stroke-linecap="null" stroke-linejoin="null" id="svg_36" y2="180.87852" x2="178.1084" y1="178.46126"
+                    x1="154.63458" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none" />
+                  <rect stroke="#000" transform="rotate(-12.528789520263672 188.4999999999997,185.55000305175773) "
+                    rx="25" id="svg_37" height="13" width="52" y="179.05" x="162.5" stroke-opacity="null"
+                    stroke-width="1.5" fill="#999999" />
+                  <ellipse stroke="#000" ry="63.5" rx="90" id="svg_6" cy="109.55" cx="154.5" stroke-width="1.5"
+                    fill="#BBBBBB" />
+                  <text style="cursor: move;" xml:space="preserve" text-anchor="start"
+                    font-family="Helvetica, Arial, sans-serif" font-size="32" id="svg_38" y="114.05" x="143.5"
+                    fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000"
+                    fill="#000000">{{i}}/{{table.length}}</text>
+                </g>
+              </svg>
+              <div [hidden]="hidden[i]" class="example-box" *ngFor="let item of table;let j = index" cdkDrag>
+                <p (click)="onEdit(item)">{{j+1}}. {{item.name}} </p> </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <button class="btn btn-danger" style="margin-right: 20px;" (click)="dropDisposition()">
+          <i class="fa fa-trash-o" ></i> Сбросить всё</button>
+        <button class="btn btn-success" (click)="addWorkerShow()"> 
+          <i class="fa fa-plus" aria-hidden="true"></i> Добавить гостя</button>
+        <div *ngIf="isOpened">
+          <app-addworker></app-addworker>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

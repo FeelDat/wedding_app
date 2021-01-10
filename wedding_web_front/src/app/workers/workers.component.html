@@ -1,0 +1,29 @@
+
+<h1>Список гостей</h1>
+<mat-button-toggle [routerLink]="['/disposition']" routerLinkActive="router-link-active">Qonaq</mat-button-toggle>
+<div class="content" style="width: 100%;max-width: 100%;">
+  <div class="col-5" style="display: flex;">
+    <app-addworker></app-addworker>
+  
+  </div>
+  <div class="col-6">
+              <div>
+                <button (click)="logout()" style="width: 200px; height: 30px;" class="btn btn-danger">logout</button>
+              </div>
+    <table>
+      <thead>
+        <th>Имя</th>
+        <th>Номер телефона</th>
+        <!-- <th>редактировать/удалить</th> -->
+      </thead>
+      <tr *ngFor = 'let worker of workerService.workers' (click)="onEdit(worker)">
+        <td>{{ worker.name }}</td>
+        <td>{{ worker.number }}</td>
+        <!-- <td>
+          <a (click)="onEdit(worker)">редактировать |</a>
+          <a (click)="onDelete(worker)"> удалить</a>
+        </td> -->
+      </tr>
+    </table>
+  </div>
+</div>
